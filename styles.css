@@ -2314,8 +2314,8 @@ p {
 
 @media (max-width: 480px) {
     .nav-logo-img {
-        width: 1.75rem;
-        height: 1.75rem;
+        width: 200px;
+        height: 40px;
     }
     
     .footer-logo-img {
