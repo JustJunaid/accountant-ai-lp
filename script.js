@@ -89,6 +89,47 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(el);
     });
     
+    // Demo Modal Functionality
+    const demoModal = document.getElementById('demoModal');
+    const demoModalClose = document.querySelector('.demo-modal-close');
+    
+    // Function to open demo modal
+    window.openDemoModal = function() {
+        if (demoModal) {
+            demoModal.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+    };
+    
+    // Function to close demo modal
+    window.closeDemoModal = function() {
+        if (demoModal) {
+            demoModal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+    };
+    
+    // Close modal when clicking the X
+    if (demoModalClose) {
+        demoModalClose.addEventListener('click', closeDemoModal);
+    }
+    
+    // Close modal when clicking outside of it
+    if (demoModal) {
+        demoModal.addEventListener('click', function(event) {
+            if (event.target === demoModal) {
+                closeDemoModal();
+            }
+        });
+    }
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && demoModal && demoModal.style.display === 'block') {
+            closeDemoModal();
+        }
+    });
+    
     // Counter Animation for Statistics
     const statNumbers = document.querySelectorAll('.stat-number');
     const statsSection = document.querySelector('.statistics');
@@ -160,7 +201,28 @@ function scrollToNextSection() {
     }
 }
 
-// Add CSS for mobile navigation
+// Demo Request Handler
+function handleDemoRequest(event) {
+    event.preventDefault();
+
+    var email = document.getElementById('subs-email').value;
+    console.log('Demo requested by:', email);
+
+    // Track the event in Google Analytics
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'demo_request', {
+        'event_category': 'engagement',
+        'event_label': email
+      });
+    }
+
+    // Redirect to Calendly after a short delay to ensure tracking is sent
+    setTimeout(function() {
+      window.location.href = 'https://calendly.com/junaid-s8l/accountant-ai-demo';
+    }, 100);
+}
+
+// Add CSS for mobile navigation and demo modal
 const style = document.createElement('style');
 style.textContent = `
     .nav-menu.active {
@@ -206,6 +268,112 @@ style.textContent = `
             opacity: 1;
             transform: translateY(0);
         }
+    }
+    
+    /* Demo Modal Styles */
+    .demo-modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(5px);
+    }
+    
+    .demo-modal-content {
+        background-color: white;
+        margin: 5% auto;
+        padding: 0;
+        border-radius: 12px;
+        width: 90%;
+        max-width: 500px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        animation: modalSlideIn 0.3s ease-out;
+    }
+    
+    @keyframes modalSlideIn {
+        from {
+            opacity: 0;
+            transform: translateY(-50px) scale(0.95);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+    
+    .demo-modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 24px 24px 0 24px;
+        border-bottom: 1px solid #e5e7eb;
+        margin-bottom: 24px;
+    }
+    
+    .demo-modal-header h3 {
+        margin: 0;
+        font-size: 24px;
+        font-weight: 600;
+        color: #1f2937;
+    }
+    
+    .demo-modal-close {
+        font-size: 28px;
+        font-weight: bold;
+        color: #9ca3af;
+        cursor: pointer;
+        line-height: 1;
+        transition: color 0.2s ease;
+    }
+    
+    .demo-modal-close:hover {
+        color: #374151;
+    }
+    
+    .demo-modal-body {
+        padding: 0 24px 24px 24px;
+    }
+    
+    .demo-modal-body p {
+        margin: 0 0 24px 0;
+        color: #6b7280;
+        line-height: 1.6;
+    }
+    
+    .form-group {
+        margin-bottom: 20px;
+    }
+    
+    .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 500;
+        color: #374151;
+    }
+    
+    .form-group input {
+        width: 100%;
+        padding: 12px 16px;
+        border: 2px solid #e5e7eb;
+        border-radius: 8px;
+        font-size: 16px;
+        transition: border-color 0.2s ease;
+        box-sizing: border-box;
+    }
+    
+    .form-group input:focus {
+        outline: none;
+        border-color: #3b82f6;
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+    
+    .demo-modal .btn {
+        width: 100%;
+        justify-content: center;
     }
 `;
 document.head.appendChild(style); 

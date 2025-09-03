@@ -10,6 +10,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async 
+    src="https://www.googletagmanager.com/gtag/js?id=G-QYVLSJTF73"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+
+      gtag('config', 'G-QYVLSJTF73');
+    </script>
+    
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "t53ot0hw0l");
+    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -22,8 +42,9 @@
             <div class="nav-menu">
                 <a href="#why-us">Why Us?</a>
                 <!-- <a href="#about">About</a> -->
-                <a href="#how-it-works">How It Works</a>
+                <!-- <a href="#how-it-works">How It Works</a> -->
                 <a href="#integrations">Integrations</a>
+                <a href="use-cases.html">Use Cases</a>
                 <!-- <a href="#testimonials">Testimonials</a> -->
                 <a href="#pricing">Pricing</a>
                 <a href="#faq">FAQ</a>
@@ -61,7 +82,7 @@
                     <a href="https://calendly.com/junaid-accountant-ai/30min" class="btn btn-primary">
                         Build my first workflow
                     </a>
-                    <a href="https://calendly.com/junaid-accountant-ai/30min" class="btn btn-outline">
+                    <a href="#" onclick="openDemoModal(); return false;" class="btn btn-outline">
                         Book a 15-min demo
                     </a>
                 </div>
@@ -117,7 +138,7 @@
     </section>
 
     <!-- Problem → Outcome Section -->
-    <section class="problem-outcome">
+    <section class="problem-outcome" id="why-us">
         <div class="container">
             <div class="problem-outcome-header">
                 <h2>The accounting workflow problem</h2>
@@ -298,11 +319,43 @@
                         </div>
                     </div>
                 </div>
+                
+                <div class="value-prop-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>AI that learns your patterns</h3>
+                        <p>Smart recognition improves over time. Handles your specific document formats, vendor names, and approval rules automatically.</p>
+                        <div class="card-highlight">
+                            <span class="highlight-icon">🧠</span>
+                            <span>Self-improving</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="value-prop-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-users-cog"></i>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Built for accounting teams</h3>
+                        <p>Designed by accountants, for accountants. Understands your workflows, terminology, and compliance needs from day one.</p>
+                        <div class="card-highlight">
+                            <span class="highlight-icon">👥</span>
+                            <span>By accountants</span>
+                        </div>
+                    </div>
+                </div>
             </div>
             
             <div class="value-props-cta">
                 <p>Ready to see how it works?</p>
-                <a href="https://calendly.com/junaid-accountant-ai/30min" class="btn btn-primary">Book a 15-min demo</a>
+                <a href="#" onclick="openDemoModal(); return false;" class="btn btn-primary">Book a 15-min demo</a>
             </div>
         </div>
     </section>
@@ -362,311 +415,6 @@
         </div>
     </section>
 
-    <!-- Real Use Cases Section -->
-    <section class="use-cases">
-        <div class="container">
-            <div class="use-cases-header">
-                <div class="header-badge">
-                    <i class="fas fa-users"></i>
-                    <span>Success Stories</span>
-                </div>
-                <h2>Real Use Cases</h2>
-                <p>See how finance teams are transforming their workflows with Accountant AI</p>
-            </div>
-            
-            <div class="use-cases-container">
-                <!-- Use Case 1: Mid-market Finance Team -->
-                <div class="use-case-story">
-                    <div class="story-visual">
-                        <div class="company-avatar">
-                            <i class="fas fa-building"></i>
-                        </div>
-                        <div class="story-flow">
-                            <div class="flow-step">
-                                <div class="step-icon">
-                                    <i class="fas fa-calendar-times"></i>
-                                </div>
-                                <span>8 days</span>
-                            </div>
-                            <div class="flow-arrow">
-                                <i class="fas fa-arrow-right"></i>
-                            </div>
-                            <div class="flow-step">
-                                <div class="step-icon">
-                                    <i class="fas fa-calendar-check"></i>
-                                </div>
-                                <span>4 days</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="story-content">
-                        <div class="story-header">
-                            <h3>Mid-market Finance Team</h3>
-                            <div class="company-size">50-200 employees</div>
-                        </div>
-                        
-                        <div class="story-section">
-                            <div class="section-label problem">
-                                <i class="fas fa-exclamation-triangle"></i>
-                                <span>Challenge</span>
-                            </div>
-                            <p>Month-end close took 8 days. Manual reconciliations, approval bottlenecks, spreadsheet chaos.</p>
-                        </div>
-                        
-                        <div class="story-section">
-                            <div class="section-label solution">
-                                <i class="fas fa-cogs"></i>
-                                <span>Solution</span>
-                            </div>
-                            <div class="workflow-steps">
-                                <span class="workflow-step">Bank statements</span>
-                                <i class="fas fa-arrow-right"></i>
-                                <span class="workflow-step">Auto-match</span>
-                                <i class="fas fa-arrow-right"></i>
-                                <span class="workflow-step">Exception queue</span>
-                                <i class="fas fa-arrow-right"></i>
-                                <span class="workflow-step">Approval routing</span>
-                                <i class="fas fa-arrow-right"></i>
-                                <span class="workflow-step">Excel export</span>
-                            </div>
-                        </div>
-                        
-                        <div class="story-section">
-                            <div class="section-label result">
-                                <i class="fas fa-trophy"></i>
-                                <span>Results</span>
-                            </div>
-                            <div class="results-grid">
-                                <div class="result-item">
-                                    <span class="result-number">50%</span>
-                                    <span class="result-label">Faster close</span>
-                                </div>
-                                <div class="result-item">
-                                    <span class="result-number">35%</span>
-                                    <span class="result-label">Less manual work</span>
-                                </div>
-                                <div class="result-item">
-                                    <span class="result-number">2 days</span>
-                                    <span class="result-label">Earlier reports</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Use Case 2: Accounting Firm -->
-                <div class="use-case-story reverse">
-                    <div class="story-visual">
-                        <div class="company-avatar">
-                            <i class="fas fa-handshake"></i>
-                        </div>
-                        <div class="story-flow">
-                            <div class="flow-step">
-                                <div class="step-icon">
-                                    <i class="fas fa-file-invoice"></i>
-                                </div>
-                                <span>200+ invoices</span>
-                            </div>
-                            <div class="flow-arrow">
-                                <i class="fas fa-arrow-right"></i>
-                            </div>
-                            <div class="flow-step">
-                                <div class="step-icon">
-                                    <i class="fas fa-file-invoice-dollar"></i>
-                                </div>
-                                <span>600+ invoices</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="story-content">
-                        <div class="story-header">
-                            <h3>Accounting Firm</h3>
-                            <div class="company-size">Multi-client practice</div>
-                        </div>
-                        
-                        <div class="story-section">
-                            <div class="section-label problem">
-                                <i class="fas fa-exclamation-triangle"></i>
-                                <span>Challenge</span>
-                            </div>
-                            <p>200+ invoices per client monthly. Manual data entry, quality control issues, client complaints.</p>
-                        </div>
-                        
-                        <div class="story-section">
-                            <div class="section-label solution">
-                                <i class="fas fa-cogs"></i>
-                                <span>Solution</span>
-                            </div>
-                            <div class="workflow-steps">
-                                <span class="workflow-step">Client uploads</span>
-                                <i class="fas fa-arrow-right"></i>
-                                <span class="workflow-step">OCR extraction</span>
-                                <i class="fas fa-arrow-right"></i>
-                                <span class="workflow-step">Review queue</span>
-                                <i class="fas fa-arrow-right"></i>
-                                <span class="workflow-step">Validation rules</span>
-                                <i class="fas fa-arrow-right"></i>
-                                <span class="workflow-step">QuickBooks sync</span>
-                            </div>
-                        </div>
-                        
-                        <div class="story-section">
-                            <div class="section-label result">
-                                <i class="fas fa-trophy"></i>
-                                <span>Results</span>
-                            </div>
-                            <div class="results-grid">
-                                <div class="result-item">
-                                    <span class="result-number">3x</span>
-                                    <span class="result-label">More invoices</span>
-                                </div>
-                                <div class="result-item">
-                                    <span class="result-number">95%</span>
-                                    <span class="result-label">Accuracy rate</span>
-                                </div>
-                                <div class="result-item">
-                                    <span class="result-number">2 days</span>
-                                    <span class="result-label">Faster delivery</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Use Case 3: Startup CFO -->
-                <div class="use-case-story">
-                    <div class="story-visual">
-                        <div class="company-avatar">
-                            <i class="fas fa-rocket"></i>
-                        </div>
-                        <div class="story-flow">
-                            <div class="flow-step">
-                                <div class="step-icon">
-                                    <i class="fas fa-file-excel"></i>
-                                </div>
-                                <span>Spreadsheets</span>
-                            </div>
-                            <div class="flow-arrow">
-                                <i class="fas fa-arrow-right"></i>
-                            </div>
-                            <div class="flow-step">
-                                <div class="step-icon">
-                                    <i class="fas fa-shield-check"></i>
-                                </div>
-                                <span>Audit ready</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="story-content">
-                        <div class="story-header">
-                            <h3>Startup CFO</h3>
-                            <div class="company-size">Series A ready</div>
-                        </div>
-                        
-                        <div class="story-section">
-                            <div class="section-label problem">
-                                <i class="fas fa-exclamation-triangle"></i>
-                                <span>Challenge</span>
-                            </div>
-                            <p>Spreadsheet-only operations. No audit trail. Auditor requests took weeks to fulfill.</p>
-                        </div>
-                        
-                        <div class="story-section">
-                            <div class="section-label solution">
-                                <i class="fas fa-cogs"></i>
-                                <span>Solution</span>
-                            </div>
-                            <div class="workflow-steps">
-                                <span class="workflow-step">Receipt capture</span>
-                                <i class="fas fa-arrow-right"></i>
-                                <span class="workflow-step">Approval workflow</span>
-                                <i class="fas fa-arrow-right"></i>
-                                <span class="workflow-step">Excel export</span>
-                                <i class="fas fa-arrow-right"></i>
-                                <span class="workflow-step">Audit trail</span>
-                            </div>
-                        </div>
-                        
-                        <div class="story-section">
-                            <div class="section-label result">
-                                <i class="fas fa-trophy"></i>
-                                <span>Results</span>
-                            </div>
-                            <div class="results-grid">
-                                <div class="result-item">
-                                    <span class="result-number">100%</span>
-                                    <span class="result-label">Audit trail</span>
-                                </div>
-                                <div class="result-item">
-                                    <span class="result-number">Ready</span>
-                                    <span class="result-label">For due diligence</span>
-                                </div>
-                                <div class="result-item">
-                                    <span class="result-number">Weeks</span>
-                                    <span class="result-label">To hours</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="use-cases-cta">
-                <div class="cta-content">
-                    <h3>Ready to see your success story?</h3>
-                    <p>Join hundreds of finance teams already using Accountant AI</p>
-                    <a href="https://calendly.com/junaid-accountant-ai/30min" class="btn btn-primary">Start your transformation</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- How It Works Section -->
-    <section id="how-it-works" class="how-it-works">
-        <div class="container">
-            <div class="section-header">
-                <h2>How It Works</h2>
-                <p>Five simple steps from capture to close</p>
-            </div>
-            <div class="steps-container">
-                <div class="step-item">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3>Capture</h3>
-                        <p>Upload PDFs, images, or bank statements. AI extracts structured data automatically.</p>
-                    </div>
-                </div>
-                <div class="step-item">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>Transform</h3>
-                        <p>Apply rules, mappings, and validations. Clean and standardize your data.</p>
-                    </div>
-                </div>
-                <div class="step-item">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>Route</h3>
-                        <p>Send to approvals, assign tasks, set SLAs. Keep everyone in the loop.</p>
-                    </div>
-                </div>
-                <div class="step-item">
-                    <div class="step-number">4</div>
-                    <div class="step-content">
-                        <h3>Sync/Export</h3>
-                        <p>Push to Excel/CSV or API to your system. Works with or without ERP.</p>
-                    </div>
-                </div>
-                <div class="step-item">
-                    <div class="step-number">5</div>
-                    <div class="step-content">
-                        <h3>Review & Audit</h3>
-                        <p>Track everything. Logs, comments, version history. Ready for compliance.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
    
 
@@ -694,14 +442,14 @@
                     <p>Automatically sync extracted data as bills, expenses, or invoices in your Xero account.</p>
                     <a href="#xero" class="integration-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <div class="integration-card">
+                <!-- <div class="integration-card">
                     <div class="integration-icon">
                         <i class="fas fa-chart-bar"></i>
                     </div>
                     <h3>Sage</h3>
                     <p>Streamline your Sage workflow with automated data entry and real-time synchronization.</p>
                     <a href="#sage" class="integration-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
+                </div> -->
                 <div class="integration-card">
                     <div class="integration-icon">
                         <i class="fas fa-file-excel"></i>
@@ -1246,8 +994,8 @@
                 <h2>Ready to build your first workflow?</h2>
                 <p>Start with 15 documents free. No credit card required.</p>
                 <div class="cta-buttons">
-                    <a href="https://calendly.com/junaid-accountant-ai/30min" class="btn btn-primary">Build my first workflow</a>
-                    <a href="https://calendly.com/junaid-accountant-ai/30min" class="btn btn-outline">Book a 15-min demo</a>
+                    <a href="https://calendly.com/junaid-accountant-ai/30min" class="btn btn-primary">Join the Waitlist</a>
+                    <a href="#" onclick="openDemoModal(); return false;" class="btn btn-outline">Book a 15-min demo</a>
                 </div>
             </div>
         </div>
@@ -1358,6 +1106,26 @@
         }
     }
     </script>
+
+    <!-- Demo Request Modal -->
+    <div id="demoModal" class="demo-modal">
+        <div class="demo-modal-content">
+            <div class="demo-modal-header">
+                <h3>Schedule Your Demo</h3>
+                <span class="demo-modal-close">&times;</span>
+            </div>
+            <div class="demo-modal-body">
+                <p>Get a personalized demo of Accountant AI's workflow builder and see how it can transform your accounting processes.</p>
+                <form id="demoForm" onsubmit="handleDemoRequest(event)">
+                    <div class="form-group">
+                        <label for="subs-email">Email Address</label>
+                        <input type="email" id="subs-email" name="email" required placeholder="Enter your email address">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Schedule Demo</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
